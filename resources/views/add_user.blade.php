@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <div class="card">
-            <h5 class="card-header">Actualizar usuario</h5>
+            <h5 class="card-header">Agregar usuario</h5>
             <div class="card-body">
                 <form action="{{ route('user.store') }}" method="POST">
                     @csrf
