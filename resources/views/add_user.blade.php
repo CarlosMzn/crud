@@ -73,7 +73,7 @@
                             </a>
                         </div>
                         <div class="col-sm-auto">
-                            <button class="btn btn-primary float-end"><span class="fas fa-save"></span> Actualizar</button>
+                            <button class="btn btn-primary float-end"><span class="fas fa-save"></span> Guardar</button>
                         </div>
                     </div>
                 </form>
