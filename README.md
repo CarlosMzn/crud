@@ -1,66 +1,98 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## Crud de usuarios básico con laravel 10.24.0
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Contenido
+1. [Información general](#general-info)
+2. [Tecnologías](#technologies)
+3. [Instalación](#installation)
+4. [Manual de usuario](#collaboration)
+### Información general
+***
+El siguiente proyecto es un CRUD de usuarios que implementa las siguientes funciones: 
+- Create (Crear)
+- Read (Leer)
+- Update (Actualizar)
+- Delete (Eliminar)
+  
+Los registros se despliegan sobre una lista que facilitan su visualizacion, búsqueda y manipulación
+![Vista general del CRUD](https://drive.google.com/uc?export=view&id=1DzhZ0ebrKXemKw_JN8uZpaDdm15qQVDd)
+## Tecnologías
+***
+Las tecnologías utilizadas en el proyecto fueron las siguientes:
+* [Laravel](https://laravel.com/docs/10.x/releases): Versión 10.24.0
+* [PHP](https://www.php.net/releases/8_1_17.php): Versión 8.1.17
+* [Xampp](https://www.apachefriends.org/es/download.html): Versión 8.1.17-0
+* [Composer](https://getcomposer.org/download/): Versión 2.6.3
+* [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/): Versión 5.0.2
+* [Fontawesome](https://fontawesome.com/v5/docs): Versión 5.10.0
+* [Datatables](https://datatables.net/examples/styling/bootstrap5.html): Versión 2.6.3
+  
+## Instalación
+***
+1. Instalar Xampp, el instalador lo puedes encontrar [aquí](https://www.apachefriends.org/es/download.html)
+2. Instalar Composer con la configuración predeterminada y elegir el comand-line de PHP, el instalador lo puedes encontrar [aquí](https://getcomposer.org/download/)
+3. Clonar el repositorio en el directorio deseado
+```
+git clone git@github.com:CarlosMzn/crud.git
+cd .\crud\
+```
+4. Una vez clonado el repositiorio, abrir el proyecto en VisualStudio y modificar el nombre del archivo **.env.example** por **.env**
+5. Correr el siguiente comando para importar paquetes faltantes y crear la carpeta del vendor
+```
+composer install
+```
+6. Correr el siguiente comando para generar un **APP_KEY**
+```
+php artisan key:generate
+```
+7. Iniciar el servidor con el siguiente comando, por default lo inicializará en la dirección http://127.0.0.1:8000/
+```
+php artisan serve
+```
+8. Activar Xampp con los servicios de **Apache** y **MySQL** y dentro del gestor de base de datos de **phpMyAdmin** crear una base de datos llamada **users_crud**
+![Creacion de la base de datos](https://drive.google.com/uc?export=view&id=1-udcrgI1schZajzWQghRJVlIy0eWBhuL)
 
-## About Laravel
+9. En la consola correr las migraciones con el siguiente comando:
+```
+php artisan migrate
+```
+10. Una vez finalizada la migración podrás visualizar el CRUD en la dirección **http://127.0.0.1:8000/**
+![Vista inicial del CRUD](https://drive.google.com/uc?export=view&id=1_FKnDgokkyjUtBNauNQRgVqMzCcd3x7v)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+11. Si asi lo deseas, puedes poblar la base de datos con el siguiente **seed**, es cual registrará usuarios con datos generados de forma aleatoria
+```
+php artisan db:seed --class=UserSeeder
+```
+![Vista inicial del CRUD con datos](https://drive.google.com/uc?export=view&id=10Gsq0ag0U4ciuOaWVuTAeqnaB5dOWZxW)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Manual de usuario
+***
+### Agregar usuario
+1. Presionar el botón de **Agregar usuario**
+![Agregar usuario](https://drive.google.com/uc?export=view&id=1hvUMtxU-S3t81k1SnPCdwtaWxee1_aPy)
+2. El boton te llevará a una vista con un formulario, el cual deberás de llenar con las instrucciones indicadas
+![Agregar usuario form](https://drive.google.com/uc?export=view&id=1WMTjdVMhnn3xMcefIXU4uIIuzb_gCLCr)
+3. Una vez llenado el formulario presionamos el botón de guardar
+![Agregar usuario form](https://drive.google.com/uc?export=view&id=1RMU1PnoML2JbTdseUg35ud6v9knz0Noy)
+4. El sistema nos redigirá a la pantalla principal con un mensaje de éxito y el nuevo usuario agregado
+![Usuario agregado](https://drive.google.com/uc?export=view&id=1Fiwsytq50qtlzTETsgG3FDS1MZWoBaw2)
 
-## Learning Laravel
+### Editar usuario
+1. Presionar el botón de **Editar usuario** que se encuentra en la columna editar sobre el usuario que quieras editar
+![Editar usuario](https://drive.google.com/uc?export=view&id=1ol1-BvOBJtMJpQetPXn5bdELsSw1mn7c)
+2. El boton te llevará a una vista con un formulario, en el cual podrás modificar los campos que desees
+![Editar usuario form](https://drive.google.com/uc?export=view&id=1s-_UxDzzwP5BCxaqH_y2MxduhbPuYl9p)
+3. Una vez llenado el formulario presionamos el botón de actualizar
+![Agregar usuario form](https://drive.google.com/uc?export=view&id=11ICBOLD62UbkDjKSxgQZa_xm3e-6zYba)
+4. El sistema nos redigirá a la pantalla principal con un mensaje de éxito y el usuario actualizado
+![Usuario agregado](https://drive.google.com/uc?export=view&id=1RA0OLXVQwy1jtbvBRvx4SKiuYvK2bQUf)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Eliminar usuario
+1. Presionar el botón de **Eliminar usuario** que se encuentra en la columna eliminar sobre el usuario que quieras eliminar
+![Eliminar usuario](https://drive.google.com/uc?export=view&id=1v13K8naj98EJpAhZIZL3Iv5vnJPvl2nf)
+2. El boton te llevará a una vista de confirmacion, en la cual decidirás si quieres eliminar el usuario
+![Editar usuario form](https://drive.google.com/uc?export=view&id=19HSiviMspY2bgEu4pd2OAegmh8N_Du6F)
+3. Presionar el botón de eliminar
+![Agregar usuario form](https://drive.google.com/uc?export=view&id=1dMQQiOzK_rt-GYNcg3oMs8Ax1w9KbKzV)
+4. El sistema nos redigirá a la pantalla principal con un mensaje de éxito y el usuario eliminado
+![Usuario agregado](https://drive.google.com/uc?export=view&id=1HWnyNNhblbuldwmq8YweFIn9fs-EJrYO)
