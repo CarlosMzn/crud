@@ -1,10 +1,10 @@
 ## Crud de usuarios básico con laravel 10.24.0
 
 ## Contenido
-1. [Información general](#general-info)
-2. [Tecnologías](#technologies)
-3. [Instalación](#installation)
-4. [Manual de usuario](#collaboration)
+1. [Información general](#información-general)
+2. [Tecnologías](#tecnologías)
+3. [Instalación](#instalación)
+4. [Manual de usuario](#manual-de-usuario)
 ### Información general
 ***
 El siguiente proyecto es un CRUD de usuarios que implementa las siguientes funciones: 
